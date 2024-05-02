@@ -6,10 +6,18 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Http\\Controllers\\BlogController' => $baseDir . '/app/Http/Controllers/BlogController.php',
+    'App\\Http\\Controllers\\BlogImagesController' => $baseDir . '/app/Http/Controllers/BlogImagesController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
+    'App\\Models\\Blog' => $baseDir . '/app/Models/Blog.php',
+    'App\\Models\\BlogImages' => $baseDir . '/app/Models/BlogImages.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+    'Brian2694\\Toastr\\Facades\\Toastr' => $vendorDir . '/brian2694/laravel-toastr/src/Facades/Toastr.php',
+    'Brian2694\\Toastr\\Toastr' => $vendorDir . '/brian2694/laravel-toastr/src/Toastr.php',
+    'Brian2694\\Toastr\\ToastrServiceProvider' => $vendorDir . '/brian2694/laravel-toastr/src/ToastrServiceProvider.php',
     'Brick\\Math\\BigDecimal' => $vendorDir . '/brick/math/src/BigDecimal.php',
     'Brick\\Math\\BigInteger' => $vendorDir . '/brick/math/src/BigInteger.php',
     'Brick\\Math\\BigNumber' => $vendorDir . '/brick/math/src/BigNumber.php',

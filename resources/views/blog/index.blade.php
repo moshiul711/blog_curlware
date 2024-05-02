@@ -8,6 +8,7 @@
     <title>Blogs - Curlware</title>
     <link rel="stylesheet" href="{{ asset('/') }}assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('/') }}assets/css/style.css">
 </head>
 <body>
