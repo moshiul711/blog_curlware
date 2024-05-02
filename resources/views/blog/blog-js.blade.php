@@ -45,7 +45,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="exampleInputName" class="form-label">Name</label>
