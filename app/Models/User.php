@@ -55,7 +55,8 @@ class User extends Authenticatable
         self::$user->profession = $request->profession;
         self::$user->password = bcrypt($request->name);
         self::$user->image = self::storeUserImage($request);
-        return self::$user->save();
+        self::$user->save();
+        return self::$user;
     }
     public static function storeUserImage($request)
     {

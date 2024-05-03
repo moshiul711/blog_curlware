@@ -1,12 +1,11 @@
-
 <script src="{{ asset('/') }}assets/js/bundle.min.js"></script>
 <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
 
-@if(session('message'))
+@if(session('success'))
     <script>
-        Command: toastr["success"]("{{ session('message') }}")
+        Command: toastr["success"]("{{ session('success') }}")
 
         toastr.options = {
             "closeButton": true,
@@ -37,22 +36,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="{{ route('login') }}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-envelope"></i></span>
-                            <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                            <span class="input-group-text" id="basic-addon1"><i
+                                    class="fa-regular fa-envelope"></i></span>
+                            <input type="text" name="email" required class="form-control" placeholder="Email" aria-label="Username"
+                                   aria-describedby="basic-addon1">
                         </div>
+                        @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                            <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" name="password" required placeholder="Password" class="form-control"
+                                   id="exampleInputPassword1">
                         </div>
+                        @error('password')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="float-end">
@@ -79,39 +87,59 @@
                         <label for="exampleInputName" class="form-label">Name</label>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-user"></i></span>
-                            <input type="text" class="form-control" name="name" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" required class="form-control" name="name" placeholder="Name"
+                                   aria-label="Username" aria-describedby="basic-addon1">
                         </div>
+                        @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-envelope"></i></span>
-                            <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                            <span class="input-group-text" id="basic-addon1"><i
+                                    class="fa-regular fa-envelope"></i></span>
+                            <input type="email" required class="form-control" name="email" placeholder="Email"
+                                   aria-label="Username" aria-describedby="basic-addon1">
                         </div>
+                        @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputProfession" class="form-label">Profession</label>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-tie"></i></span>
-                            <input type="text" class="form-control" name="profession" placeholder="Profession" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" required class="form-control" name="profession" placeholder="Profession"
+                                   aria-label="Username" aria-describedby="basic-addon1">
                         </div>
+                        @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                            <input type="password" placeholder="Password" class="form-control" name="password" id="exampleInputPassword1">
+                            <input type="password" required placeholder="Password" class="form-control" name="password"
+                                   id="exampleInputPassword1">
                         </div>
+                        @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputFile" class="form-label">Password</label>
+                        <label for="exampleInputFile" class="form-label">Profile Picture</label>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-image"></i></span>
-                            <input type="file" class="form-control" id="exampleInputFile" name="image">
+                            <input type="file" required class="form-control" id="exampleInputFile" name="image">
                         </div>
+                        @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="float-end">

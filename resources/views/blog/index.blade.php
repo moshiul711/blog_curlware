@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('/') }}assets/css/style.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
     <div class="container">
         <a class="navbar-brand" href="#">Curl Ware</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -21,10 +21,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                @if(Session::get('user_id'))
                 <li class="nav-item">
                     <a class="nav-link" href="#">Dashboard</a>
                 </li>
-
+                @endif
             </ul>
             <div class="d-flex me-2">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -41,12 +42,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-regular fa-user"></i>
-                                Moshiul
+                                <img src="{{ asset(Session::get('user_image')) }}" height="30" width="30" class="border border-secondary" style="border-radius: 50%" alt="">
+                                {{ Session::get('user_name') }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                             </ul>
                         </li>
                     @endif
@@ -55,6 +56,7 @@
         </div>
     </div>
 </nav>
+
 
 
 
