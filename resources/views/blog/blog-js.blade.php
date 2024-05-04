@@ -1,6 +1,17 @@
 <script src="{{ asset('/') }}assets/js/bundle.min.js"></script>
 <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+<script src="{{ asset('/') }}assets/js/summernote1.js"></script>
+<script src="{{ asset('/') }}assets/js/summernote.js"></script>
+
+{{--<!-- WYSIWYG Editor JS -->--}}
+{{--<script src="{{ asset('/') }}assets/js/jquery.richtext.js"></script>--}}
+{{--<script src="{{ asset('/') }}assets/js/wysiwyag.js"></script>--}}
+
+{{--<!-- FORMEDITOR JS -->--}}
+{{--<script src="{{ asset('/') }}assets/js/quill.min.js"></script>--}}
+{{--<script src="{{ asset('/') }}assets/js/form-editor2.js"></script>--}}
 {!! Toastr::message() !!}
 
 @if(session('success'))
